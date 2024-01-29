@@ -10,7 +10,7 @@ generate_roles <-
   function(n_sprints,
            start_sprint,
            start_date = Sys.Date(),
-           names = c("Eric", "Jessica", "Kristina", "Chris", "Renata")) {
+           names = c("Eric", "Kristina", "Chris", "Renata")) {
     
     start_monday <- lubridate::floor_date(start_date, unit = "week", week_start = 1)
     n_names = length(names)
@@ -27,4 +27,4 @@ generate_roles <-
     
   }
 
-generate_roles(10, start_sprint = 25) |> readr::write_csv("roles.csv")
+generate_roles(10, start_sprint = 27, start_date = as.Date("2024-02-12"), names = c("Chris", "Renata", "Eric","Kristina")) |> readr::write_csv("roles.csv")
